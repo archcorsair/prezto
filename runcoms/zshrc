@@ -3,7 +3,12 @@
 #
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
+# CUSTOM STUFF ADDED BY ME
+# export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+
+precmd() {
+  echo -ne "\e]1;${PWD##*/}\a"
+}
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
@@ -11,3 +16,5 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+setopt clobber
+alias copy="pbcopy"
