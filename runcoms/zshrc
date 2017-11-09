@@ -22,3 +22,11 @@ precmd() {
 #stt_title () { setTerminalText 2 $@; }
 # --- END PERSONAL CHANGES ---
 # Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Customize to your needs
+export NODE_ENV="dev"
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+eval "$(thefuck --alias)"
